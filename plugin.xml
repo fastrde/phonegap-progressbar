@@ -17,13 +17,14 @@
 			</feature>
 		</config-file>
 	</platform>
-	<!--<platform name="ios">
-		<header-file src="src/ios/CDVCheckGPS.h" />
-		<source-file src="src/ios/CDVCheckGPS.m" />
+	<platform name="ios">
+		<header-file src="src/ios/CDVProgressbar.h" />
+		<source-file src="src/ios/CDVProgressbar.m" />
 		<config-file target="config.xml" parent="/*">
-			<feature name="CheckGPS">
-				<param name="ios-package" value="CheckGPS" />
-			</feature>
+			<feature name="CDVProgressbar">
+				<param name="ios-package" value="CDVProgressbar" />
+                <param name="onload" value="true" />
+            </feature>
 		</config-file>
-	</platform>-->
+	</platform>
 </plugin>

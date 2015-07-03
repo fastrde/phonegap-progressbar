@@ -1,6 +1,6 @@
 Progressbar Plugin for Android and iOS
 ===========================================
 
-iOS NOT READY YET!
+iOS ONLY WORKING TOGETHER WITH http://github.com/fastrde/phonegap-plugin-injectView
 
 Progressbar is shown on top of screen while page is loading
