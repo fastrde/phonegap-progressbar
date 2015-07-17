@@ -41,7 +41,7 @@ public class Progressbar extends CordovaPlugin {
 	private void onPageStarted(){
          activity.addContentView(progressbarWebview, new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                2));
+                4));
         progressbarWebview.loadUrl("javascript:resetBar();runTick();");
 
 	}
