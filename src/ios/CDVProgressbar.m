@@ -17,8 +17,8 @@
 - (void)initProgressBarFrame
 {
     self.progressBar=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
-    NSString* html = @"<html><head><style>*{padding:0px;margin:0px;} #progress {width: 100%;position: relative;padding: 0px;} #bar {height: 2px;background-color: green;}</style></head><body><div id=\"progress\"><div id=\"bar\" style=\"width:5%%\"></div></div><script type=\"text/javascript\">var IntervalId = null;function tick(){var p = document.getElementById('bar').style.width; p=parseInt(p.replace(/%/,\"\"));if (p > 90) return;p=(p+2)+\"%\"; document.getElementById('bar').style.width=p;};function resetBar(){document.getElementById('bar').style.width = \"5%\";};function finishBar(){document.getElementById('bar').style.width = \"100%\";};function runTick(){IntervalId = setInterval(tick, 20);}</script></body></html>";
-    [self.progressBar loadHTMLString:html baseURL:nil];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"progressbar" ofType:@"html" inDirectory:@"www"]]];
+    [self.progressBar loadRequest:urlRequest];
 }
 
 - (void)onViewDidLayoutSubviews:(NSNotification *)notification{

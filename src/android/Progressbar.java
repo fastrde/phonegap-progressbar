@@ -39,14 +39,16 @@ public class Progressbar extends CordovaPlugin {
 		return null;
 	}
 	private void onPageStarted(){
-         activity.addContentView(progressbarWebview, new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                4));
-        progressbarWebview.loadUrl("javascript:resetBar();runTick();");
-
+		if (progressbarWebview.getParent() != null){
+    	((ViewGroup) progressbarWebview.getParent()).removeView(progressbarWebview);
+		}
+		activity.addContentView(progressbarWebview, new ViewGroup.LayoutParams(
+   		ViewGroup.LayoutParams.MATCH_PARENT,
+     	4));
+		progressbarWebview.loadUrl("javascript:resetBar();runTick();");
 	}
 	private void onPageFinished(){
-        progressbarWebview.loadUrl("javascript:finishBar();");
-       ((ViewGroup) progressbarWebview.getParent()).removeView(progressbarWebview);
+    progressbarWebview.loadUrl("javascript:finishBar();");
+    ((ViewGroup) progressbarWebview.getParent()).removeView(progressbarWebview);
 	}
 }
