@@ -1,3 +1,5 @@
+OUTDATED - NOT MAINTAINED
+
 Progressbar Plugin for Android and iOS
 ===========================================
 
